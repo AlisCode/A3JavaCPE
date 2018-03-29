@@ -3,3 +3,5 @@ RemoteSystemsTempFile/*
 .idea/*
 out/*
 *.iml
+CheckersGameHalfPOO/out/*
+CheckersGameHalfPOO/.idea/*
