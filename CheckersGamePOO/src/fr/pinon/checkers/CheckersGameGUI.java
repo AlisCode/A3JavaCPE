@@ -7,6 +7,11 @@ public class CheckersGameGUI extends JFrame {
     private JPanel checkersBoard;
     private JMenuBar menuBar;
 
+    /**
+     * Constructeur pour la classe CheckersGameGUIData
+     *
+     * @param checkersGameGUIData
+     */
     public CheckersGameGUI(CheckersGameGUIData checkersGameGUIData) {
         super();
 

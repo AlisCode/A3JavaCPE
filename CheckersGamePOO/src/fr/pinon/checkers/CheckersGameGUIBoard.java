@@ -7,10 +7,15 @@ import java.awt.event.MouseListener;
 
 public class CheckersGameGUIBoard extends JPanel {
 
-    CheckersGameGUIData checkersGameGUIData;
+    private CheckersGameGUIData checkersGameGUIData;
     private int size;
     private JPanel selectedPieceGUI;
 
+    /**
+     * Constructeur de la classe CheckersGameGUIBoard
+     *
+     * @param checkersGameGUIData Les données utiles au board (couleurs principalement)
+     */
     public CheckersGameGUIBoard(CheckersGameGUIData checkersGameGUIData) {
         this.checkersGameGUIData = checkersGameGUIData;
         this.size = checkersGameGUIData.getSize();
@@ -20,6 +25,9 @@ public class CheckersGameGUIBoard extends JPanel {
     }
 
 
+    /**
+     * Crée la board (damier + pions) sur ce JPanel
+     */
     private void setCheckerboard() {
         GridLayout layout = new GridLayout(this.size, this.size);
         this.setLayout(layout);
@@ -28,16 +36,19 @@ public class CheckersGameGUIBoard extends JPanel {
         this.placePions();
     }
 
+    /**
+     * Crée le damier sur ce JPanel
+     */
     private void createDamier() {
         CaseClickable case_listener = new CaseClickable();
 
         for (int x = 0; x < this.size; x++) {
             for (int y = 0; y < this.size; y++) {
-                JPanel case_to_add = new JPanel();
+                JPanel case_to_add;
                 if ((x + y) % 2 == 1) {
-                    case_to_add.setBackground(this.checkersGameGUIData.getColorBlackSquare());
+                    case_to_add = new SquareGUI(this.checkersGameGUIData.getColorBlackSquare());
                 } else {
-                    case_to_add.setBackground(this.checkersGameGUIData.getColorWhiteSquare());
+                    case_to_add = new SquareGUI(this.checkersGameGUIData.getColorWhiteSquare());
                 }
                 case_to_add.addMouseListener(case_listener);
                 this.add(case_to_add);
@@ -45,6 +56,9 @@ public class CheckersGameGUIBoard extends JPanel {
         }
     }
 
+    /**
+     * Place les pions sur le plateau
+     */
     private void placePions() {
         PieceClickable piece_listener = new PieceClickable();
 
@@ -56,11 +70,11 @@ public class CheckersGameGUIBoard extends JPanel {
 
                         JPanel panel_case = (JPanel) this.getComponent(index_case);
 
-                        JPanel panel_pion = new JPanel();
+                        JPanel panel_pion;
                         if (joueur == 0) {
-                            panel_pion.setBackground(this.checkersGameGUIData.getColorBlackPiece());
+                            panel_pion = new PieceGUI(this.checkersGameGUIData, PieceGUI.PieceColor.NOIR);
                         } else {
-                            panel_pion.setBackground(this.checkersGameGUIData.getColorWhitePiece());
+                            panel_pion = new PieceGUI(this.checkersGameGUIData, PieceGUI.PieceColor.BLANC);
                         }
 
                         panel_pion.addMouseListener(piece_listener);
@@ -72,28 +86,58 @@ public class CheckersGameGUIBoard extends JPanel {
         }
     }
 
+    /**
+     * Setter pour la pièce selectionnée
+     *
+     * @param piece
+     */
     private void setSelectedPieceGUI(JPanel piece) {
         this.selectedPieceGUI = piece;
     }
 
+    /**
+     * Bouge la piece selectionnée (this.selectedPieceGUI) au JPanel de destination
+     *
+     * @param dest La destination choisie
+     */
     private void movePiece(JPanel dest) {
-        JPanel parent = (JPanel) this.selectedPieceGUI.getParent();
-        parent.removeAll();
-        parent.repaint();
 
-        dest.removeAll();
-        dest.add(this.selectedPieceGUI);
-        dest.repaint();
+        // Evite le cas où selectedPieceGUI est vide
+        if (this.selectedPieceGUI != null) {
+            // Recupère le parent afin de retirer selectedPieceGUI
+            JPanel parent = (JPanel) this.selectedPieceGUI.getParent();
+
+            // Retire la pièce et ré-affiche la case
+            parent.removeAll();
+            parent.repaint();
+
+            // Retire la pièce déjà présente dans la destination (s'il y en a une)
+            dest.removeAll();
+
+            // Ajoute la pièce selectionnée dans la case de destination et ré-affiche ladite case
+            dest.add(this.selectedPieceGUI);
+            dest.repaint();
+        }
+
     }
 
-
+    /**
+     * Un écouteur pour les pièces qui sont clickables
+     */
     private class PieceClickable implements MouseListener {
 
+        /**
+         * Appelé quand la pièce est clickée
+         *
+         * @param e L'évènement généré
+         */
         @Override
         public void mouseClicked(MouseEvent e) {
             JPanel piece = (JPanel) e.getSource();
             setSelectedPieceGUI(piece);
         }
+
+        // Les autres méthodes ne sont pas à implémenter
 
         @Override
         public void mousePressed(MouseEvent e) {
@@ -116,13 +160,24 @@ public class CheckersGameGUIBoard extends JPanel {
         }
     }
 
+    /**
+     * Un écouteur pour les cases clickables du damier
+     */
     private class CaseClickable implements MouseListener {
 
+        /**
+         * Appellé quand la case est clickée
+         *
+         * @param e L'évènement généré
+         */
         @Override
         public void mouseClicked(MouseEvent e) {
             JPanel case_click = (JPanel) e.getSource();
             movePiece(case_click);
         }
+
+
+        // Les autres méthodes ne sont pas à implémenter
 
         @Override
         public void mousePressed(MouseEvent e) {
