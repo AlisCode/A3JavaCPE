@@ -5,15 +5,15 @@ import java.awt.*;
 
 public class CheckersGameGUIMenu extends JMenuBar {
 
-    private CheckersGameGUIData checkersGameGUIData;
+    private CheckersGameControler checkersGameControler;
 
     private JMenu menuChoixCouleurs;
     private JMenuItem itemPieceBlanche;
     private JMenuItem itemPieceNoire;
 
-    public CheckersGameGUIMenu(CheckersGameGUIData checkersGameGUIData) {
+    public CheckersGameGUIMenu(CheckersGameControler checkersGameControler) {
 
-        this.checkersGameGUIData = checkersGameGUIData;
+        this.checkersGameControler = checkersGameControler;
 
         this.menuChoixCouleurs = new JMenu("Choix couleurs");
         this.itemPieceBlanche = new JMenuItem("Piece Blanche");
@@ -24,16 +24,16 @@ public class CheckersGameGUIMenu extends JMenuBar {
         this.add(menuChoixCouleurs);
 
         this.itemPieceBlanche.addActionListener(e -> {
-            Color newColor = JColorChooser.showDialog(null, "Couleur pièce blanche", this.checkersGameGUIData.getColorWhitePiece());
+            Color newColor = JColorChooser.showDialog(null, "Couleur pièce blanche", this.checkersGameControler.getColorWhitePiece());
             if (newColor != null) {
-                checkersGameGUIData.setColorWhitePiece(newColor);
+                //this.checkersGameControler.setColorWhitePiece(newColor);
             }
         });
 
         this.itemPieceNoire.addActionListener(e -> {
-            Color newColor = JColorChooser.showDialog(null, "Couleur pièce noire", this.checkersGameGUIData.getColorBlackPiece());
+            Color newColor = JColorChooser.showDialog(null, "Couleur pièce noire", this.checkersGameControler.getColorBlackPiece());
             if (newColor != null) {
-                checkersGameGUIData.setColorBlackPiece(newColor);
+                //this.checkersGameControler.setColorBlackPiece(newColor);
             }
         });
     }

@@ -20,8 +20,6 @@ public class CheckersGameGUIData {
         this.colorBlackSquare = blackSquare;
         this.colorWhiteSquare = whiteSquare;
         this.size = size;
-
-        this.propertyChangeSupport = new PropertyChangeSupport(this);
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -17,13 +17,13 @@ public class CheckersGameGUI extends JFrame {
     /**
      * Constructeur pour la classe CheckersGameGUIData
      *
-     * @param checkersGameGUIData
+     * @param controler Le contrôleur du jeu
      */
-    public CheckersGameGUI(CheckersGameGUIData checkersGameGUIData) {
+    public CheckersGameGUI(CheckersGameControler controler) {
         super();
 
-        this.checkersBoard = new CheckersGameGUIBoard(checkersGameGUIData);
-        this.menuBar = new CheckersGameGUIMenu(checkersGameGUIData);
+        this.checkersBoard = new CheckersGameGUIBoard(controler);
+        this.menuBar = new CheckersGameGUIMenu(controler);
         this.setJMenuBar(menuBar);
         this.setContentPane(checkersBoard);
 

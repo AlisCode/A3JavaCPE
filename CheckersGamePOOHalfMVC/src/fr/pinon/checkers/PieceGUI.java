@@ -27,23 +27,23 @@ public class PieceGUI extends JPanel implements PropertyChangeListener {
     private PieceColor pieceColor;
 
     /**
-     * Les données de GUI du jeu
+     * Le contrôleur du jeu
      */
-    private CheckersGameGUIData checkersGameGUIData;
+    private CheckersGameControler checkersGameControler;
 
     /**
      * Constructeur pour la classe PieceGUI
      *
-     * @param data       Les données de GUI concernant le jeu
-     * @param pieceColor La couleur de la pièce (enum PieceColor)
+     * @param checkersGameControler Les données de GUI concernant le jeu
+     * @param pieceColor            La couleur de la pièce (enum PieceColor)
      */
-    public PieceGUI(CheckersGameGUIData data, PieceColor pieceColor) {
+    public PieceGUI(CheckersGameControler checkersGameControler, PieceColor pieceColor) {
         super();
-        this.checkersGameGUIData = data;
+        this.checkersGameControler = checkersGameControler;
         this.pieceColor = pieceColor;
         this.assignColor();
         this.setOpaque(false);
-        data.addPropertyChangeListener(this);
+        this.checkersGameControler.addPropertyChangeListener(this);
     }
 
     /**
@@ -77,10 +77,10 @@ public class PieceGUI extends JPanel implements PropertyChangeListener {
     public void assignColor() {
         switch (this.pieceColor) {
             case BLANC:
-                this.color = this.checkersGameGUIData.getColorWhitePiece();
+                this.color = this.checkersGameControler.getColorWhitePiece();
                 break;
             case NOIR:
-                this.color = this.checkersGameGUIData.getColorBlackPiece();
+                this.color = this.checkersGameControler.getColorBlackPiece();
                 break;
             default:
                 break;
