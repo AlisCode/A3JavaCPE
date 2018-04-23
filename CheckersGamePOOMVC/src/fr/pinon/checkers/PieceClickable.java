@@ -5,27 +5,35 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Un écouteur pour les cases clickables du damier
+ * Un écouteur pour les pièces qui sont clickables
  */
-public class CaseClickable implements MouseListener {
-
-    private CheckersGameControler checkersGameControler;
-
-    public CaseClickable(CheckersGameControler controler) {
-        this.checkersGameControler = controler;
-    }
+public class PieceClickable implements MouseListener {
 
     /**
-     * Appellé quand la case est clickée
+     * Le contrôleur du jeu
+     */
+    private CheckersGameControler controler;
+
+    /**
+     * Constructeur de l'écouteur PieceClickable
+     *
+     * @param checkersGameControler Le contrôleur du jeu
+     */
+    public PieceClickable(CheckersGameControler checkersGameControler) {
+        this.controler = checkersGameControler;
+    }
+
+
+    /**
+     * Appelé quand la pièce est clickée
      *
      * @param e L'évènement généré
      */
     @Override
     public void mouseClicked(MouseEvent e) {
-        JPanel case_click = (JPanel) e.getSource();
-        this.checkersGameControler.movePiece(case_click);
+        JPanel piece = (JPanel) e.getSource();
+        this.controler.clickedPiece(piece);
     }
-
 
     // Les autres méthodes ne sont pas à implémenter
 
