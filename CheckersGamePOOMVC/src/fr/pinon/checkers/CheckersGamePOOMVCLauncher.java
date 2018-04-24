@@ -7,7 +7,7 @@ public class CheckersGamePOOMVCLauncher {
 
     public static void main(String[] args) {
 
-        CheckersGameGUIModel checkersGameGUIModel = new CheckersGameGUIModel(newBlackCoords(), newWhiteCoords(), 10, PieceGUI.PieceColor.BLANC);
+        CheckersGameModel checkersGameModel = new CheckersGameModel(newBlackCoords(), newWhiteCoords(), 10, PieceGUI.PieceColor.BLANC);
         CheckersGameGUIData checkersGameGUIData = new CheckersGameGUIData(Color.BLUE, Color.LIGHT_GRAY, Color.BLACK, Color.WHITE, 10);
         CheckersGameControler checkersGameControler = new CheckersGameControler(checkersGameGUIData);
 
@@ -47,6 +47,23 @@ public class CheckersGamePOOMVCLauncher {
     }
 
     private static Coord[] newWhiteCoords() {
+        return new Coord[]{
+                new Coord(0, 7),
+                new Coord(2, 7),
+                new Coord(4, 7),
+                new Coord(6, 7),
+                new Coord(8, 7),
+                new Coord(1, 8),
+                new Coord(3, 8),
+                new Coord(5, 8),
+                new Coord(7, 8),
+                new Coord(9, 8),
+                new Coord(0, 9),
+                new Coord(2, 9),
+                new Coord(4, 9),
+                new Coord(6, 9),
+                new Coord(8, 9),
 
+        };
     }
 }

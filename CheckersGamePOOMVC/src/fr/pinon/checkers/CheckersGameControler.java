@@ -2,9 +2,13 @@ package fr.pinon.checkers;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+
+import static fr.pinon.checkers.PieceGUI.PieceColor.BLANC;
 
 public class CheckersGameControler implements PropertyChangeListener {
 
@@ -89,6 +93,7 @@ public class CheckersGameControler implements PropertyChangeListener {
      * @param piece La pièce cliquée
      */
     public void clickedPiece(JPanel piece) {
+
         this.propertyChangeSupport.firePropertyChange("selectedPieceGUI", null, piece);
     }
 
@@ -102,25 +107,6 @@ public class CheckersGameControler implements PropertyChangeListener {
     }
 
     /**
-     * Appelle le setter dans CheckersGameGUIData pour changer la couleur des pièces blanches
-     *
-     * @param c Nouvelle couleur des pièces blanches
-     */
-    public void setColorWhitePiece(Color c) {
-        this.checkersGameGUIData.setColorWhitePiece(c);
-    }
-
-
-    /**
-     * Appelle le setter dans CheckersGameGUIData pour changer la couleur des pièces noires
-     *
-     * @param c Nouvelle couleur des pièces noires
-     */
-    public void setColorBlackPiece(Color c) {
-        this.checkersGameGUIData.setColorBlackPiece(c);
-    }
-
-    /**
      * Evènement lancé quand on repère un changement de propriété dans les objets qu'on écoute
      *
      * @param evt L'évènement généré
@@ -130,4 +116,43 @@ public class CheckersGameControler implements PropertyChangeListener {
         this.propertyChangeSupport.firePropertyChange(evt);
 
     }
+
+    public class ChangeColorPieceListener implements ActionListener {
+
+        /**
+         * Type de pièce dont la couleur sera changée par ce Listener
+         */
+        private PieceGUI.PieceColor pieceColor;
+
+        /**
+         * Constructeur du listener
+         *
+         * @param pieceColor
+         */
+        public ChangeColorPieceListener(PieceGUI.PieceColor pieceColor) {
+            this.pieceColor = pieceColor;
+        }
+
+        /**
+         * Appellé quand on clique sur le bouton concerné
+         *
+         * @param e
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            switch (this.pieceColor) {
+                case BLANC:
+                    Color newColorBlanc = JColorChooser.showDialog(null, "Couleur pièce blanche", getColorWhitePiece());
+                    checkersGameGUIData.setColorWhitePiece(newColorBlanc);
+                    break;
+                case NOIR:
+                    Color newColorNoir = JColorChooser.showDialog(null, "Couleur pièce noire", getColorBlackPiece());
+                    checkersGameGUIData.setColorBlackPiece(newColorNoir);
+                    break;
+
+            }
+        }
+    }
+
 }

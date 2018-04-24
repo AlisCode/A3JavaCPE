@@ -26,8 +26,8 @@
       <file leaf-file-name="CheckersGameGUIBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="88" column="53" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="53" />
+            <state relative-caret-position="440">
+              <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PieceGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PieceGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="455">
+              <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,13 +47,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckersGameControler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CheckersGameControler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameControler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="201">
+              <caret line="138" column="11" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3543#3544#0" expanded="true" />
+                <element signature="e#3595#3596#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGamePOOHalfMVCLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="79" />
+              <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -71,8 +73,8 @@
       <file leaf-file-name="CheckersGameGUIMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="244">
+              <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +85,20 @@
       <file leaf-file-name="CheckersGameGUIData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+            <state relative-caret-position="124">
+              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PieceClickable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceClickable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,14 +136,14 @@
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/Test.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGamePOOLauncher.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUI.java" />
-        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIData.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/PieceClickable.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CaseClickable.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIBoard.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGamePOOHalfMVCLauncher.java" />
-        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameControler.java" />
-        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIMenu.java" />
         <option value="$PROJECT_DIR$/src/fr/pinon/checkers/PieceGUI.java" />
+        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIMenu.java" />
+        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIData.java" />
+        <option value="$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameControler.java" />
       </list>
     </option>
   </component>
@@ -150,7 +164,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,10 +188,11 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="PieceGUI&#9;PSI&#9;JAVA://fr.pinon.checkers.PieceGUI&#10;CheckersGameControler&#9;FILE&#9;file:///home/olivier/Workspace/Java/A3JavaCPE/CheckersGamePOOHalfMVC/src/fr/pinon/checkers/CheckersGameControler.java&#10;addMouseListener&#9;PSI&#9;JAVA://java.awt.Component#addMouseListener&#10;clickedPiece&#9;PSI&#9;JAVA://fr.pinon.checkers.CheckersGameControler#clickedPiece" />
+    <property name="SearchEverywhereHistoryKey" value="ChangeColorPieceListener&#9;PSI&#9;JAVA://fr.pinon.checkers.CheckersGameControler.ChangeColorPieceListener&#10;PieceGUI&#9;PSI&#9;JAVA://fr.pinon.checkers.PieceGUI&#10;CheckersGameControler&#9;FILE&#9;file:///home/olivier/Workspace/Java/A3JavaCPE/CheckersGamePOOHalfMVC/src/fr/pinon/checkers/CheckersGameControler.java&#10;addMouseListener&#9;PSI&#9;JAVA://java.awt.Component#addMouseListener&#10;clickedPiece&#9;PSI&#9;JAVA://fr.pinon.checkers.CheckersGameControler#clickedPiece" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CheckersGamePOOMVC" />
@@ -271,11 +285,12 @@
       <workItem from="1523457775674" duration="2221000" />
       <workItem from="1524484208401" duration="4612000" />
       <workItem from="1524489838673" duration="20000" />
+      <workItem from="1524572747988" duration="2538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22529000" />
+    <option name="totallyTimeSpent" value="25067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="20" width="1358" height="744" extended-state="0" />
@@ -284,32 +299,32 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Cargo" order="3" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32866043" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32866043" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32866043" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +424,8 @@
           <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3595#3596#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -493,6 +510,8 @@
           <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3595#3596#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,16 +690,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceClickable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/SquareGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-281">
@@ -715,20 +724,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIBoard.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="88" column="53" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="53" />
+        <state relative-caret-position="455">
+          <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIData.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+        <state relative-caret-position="440">
+          <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceClickable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -738,36 +757,38 @@
     <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGamePOOHalfMVCLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameControler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        <state relative-caret-position="244">
+          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/PieceGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameGUIData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="124">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/pinon/checkers/CheckersGameControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="138" column="11" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3595#3596#0" expanded="true" />
           </folding>
         </state>
       </provider>

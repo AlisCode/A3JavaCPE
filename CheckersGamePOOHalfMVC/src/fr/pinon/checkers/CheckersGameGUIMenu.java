@@ -17,25 +17,14 @@ public class CheckersGameGUIMenu extends JMenuBar {
         this.checkersGameControler = checkersGameControler;
 
         this.menuChoixCouleurs = new JMenu("Choix couleurs");
-        this.itemPieceBlanche = new JMenuItem("Piece Blanche");
-        this.itemPieceNoire = new JMenuItem("Piece Noire");
+        this.itemPieceBlanche = new JMenuItem("Pièce Blanche");
+        this.itemPieceNoire = new JMenuItem("Pièce Noire");
 
         this.menuChoixCouleurs.add(itemPieceBlanche);
         this.menuChoixCouleurs.add(itemPieceNoire);
         this.add(menuChoixCouleurs);
 
-        this.itemPieceBlanche.addActionListener(e -> {
-            Color newColor = JColorChooser.showDialog(null, "Couleur pièce blanche", this.checkersGameControler.getColorWhitePiece());
-            if (newColor != null) {
-                this.checkersGameControler.setColorWhitePiece(newColor);
-            }
-        });
-
-        this.itemPieceNoire.addActionListener(e -> {
-            Color newColor = JColorChooser.showDialog(null, "Couleur pièce noire", this.checkersGameControler.getColorBlackPiece());
-            if (newColor != null) {
-                this.checkersGameControler.setColorBlackPiece(newColor);
-            }
-        });
+        this.itemPieceBlanche.addActionListener(checkersGameControler.new ChangeColorPieceListener(PieceGUI.PieceColor.BLANC));
+        this.itemPieceNoire.addActionListener(checkersGameControler.new ChangeColorPieceListener(PieceGUI.PieceColor.NOIR));
     }
 }

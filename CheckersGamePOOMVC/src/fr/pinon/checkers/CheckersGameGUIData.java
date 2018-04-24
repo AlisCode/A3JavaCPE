@@ -1,6 +1,9 @@
 package fr.pinon.checkers;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -80,4 +83,6 @@ public class CheckersGameGUIData {
     public void setSize(int size) {
         this.size = size;
     }
+
+
 }

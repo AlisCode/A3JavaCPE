@@ -1,0 +1,17 @@
+package fr.pinon.checkers;
+
+public class Pawn extends AbstractPiece {
+    public Pawn(Coord coord, PieceGUI.PieceColor pieceColor) {
+        super(coord, pieceColor);
+    }
+
+    @Override
+    public boolean isMoveOk(Coord targetCoord) {
+        return false;
+    }
+
+    @Override
+    public boolean isMoveOkWithCatch(Coord targetCoord, int deltaX, int deltaY, boolean isPieceToCatch) {
+        return false;
+    }
+}
