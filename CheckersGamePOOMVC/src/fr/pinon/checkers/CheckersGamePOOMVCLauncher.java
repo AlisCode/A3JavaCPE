@@ -1,5 +1,12 @@
 package fr.pinon.checkers;
 
+import fr.pinon.checkers.controler.CheckersGameControler;
+import fr.pinon.checkers.model.CheckersGameModel;
+import fr.pinon.checkers.model.Coord;
+import fr.pinon.checkers.model.PieceGUI;
+import fr.pinon.checkers.vue.CheckersGameGUI;
+import fr.pinon.checkers.vue.CheckersGameGUIData;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +16,7 @@ public class CheckersGamePOOMVCLauncher {
 
         CheckersGameModel checkersGameModel = new CheckersGameModel(newBlackCoords(), newWhiteCoords(), 10, PieceGUI.PieceColor.BLANC);
         CheckersGameGUIData checkersGameGUIData = new CheckersGameGUIData(Color.BLUE, Color.LIGHT_GRAY, Color.BLACK, Color.WHITE, 10);
-        CheckersGameControler checkersGameControler = new CheckersGameControler(checkersGameGUIData);
+        CheckersGameControler checkersGameControler = new CheckersGameControler(checkersGameGUIData, checkersGameModel);
 
         JFrame f = new CheckersGameGUI(checkersGameControler);
         setFrameConfig(f, "Jeu de dames - POO");
