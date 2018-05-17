@@ -1,10 +1,9 @@
 package fr.pinon.checkers.controler;
 
-import fr.pinon.checkers.model.ActionType;
-import fr.pinon.checkers.model.CheckersGameModel;
-import fr.pinon.checkers.model.Coord;
-import fr.pinon.checkers.model.PieceGUI;
+import fr.pinon.checkers.model.*;
 import fr.pinon.checkers.vue.CheckersGameGUIData;
+
+import java.util.List;
 
 import javax.swing.*;
 import java.awt.*;
@@ -120,6 +119,9 @@ public class CheckersGameControler implements PropertyChangeListener {
         ActionType actionType = checkersGameModel.movePiece(target);
         if (actionType != ActionType.NOMOVE) {
             this.propertyChangeSupport.firePropertyChange("movePiece", null, target);
+            if (actionType == ActionType.MOVECATCH) {
+                this.propertyChangeSupport.firePropertyChange("takePiece", null, checkersGameModel.getPieceToTake());
+            }
         }
     }
 
@@ -131,7 +133,10 @@ public class CheckersGameControler implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         this.propertyChangeSupport.firePropertyChange(evt);
+    }
 
+    public List<PieceInfo> getModelInfo() {
+        return this.checkersGameModel.getModelInfo();
     }
 
     public void addCoord(JPanel case_add, int x, int y) {

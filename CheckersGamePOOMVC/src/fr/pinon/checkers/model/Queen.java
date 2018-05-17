@@ -12,7 +12,7 @@ public class Queen extends AbstractPiece {
     }
 
     @Override
-    public boolean isMoveOkWithCatch(Coord targetCoord, int deltaX, int deltaY, boolean isPieceToCatch) {
+    public boolean isMoveOkWithCatch(Coord targetCoord) {
         return false;
     }
 }

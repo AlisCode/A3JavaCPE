@@ -15,7 +15,7 @@ public abstract class AbstractPiece implements PieceModel {
 
     public abstract boolean isMoveOk(Coord targetCoord);
 
-    public abstract boolean isMoveOkWithCatch(Coord targetCoord, int deltaX, int deltaY, boolean isPieceToCatch);
+    public abstract boolean isMoveOkWithCatch(Coord targetCoord);
 
     @Override
     public Coord getCoord() {

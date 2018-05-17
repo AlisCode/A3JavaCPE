@@ -3,7 +3,12 @@ package fr.pinon.checkers.vue;
 import fr.pinon.checkers.controler.CaseClickable;
 import fr.pinon.checkers.controler.CheckersGameControler;
 import fr.pinon.checkers.controler.PieceClickable;
+import fr.pinon.checkers.model.Coord;
 import fr.pinon.checkers.model.PieceGUI;
+import fr.pinon.checkers.model.PieceInfo;
+import fr.pinon.checkers.model.PieceModel;
+
+import java.util.List;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,19 +44,19 @@ public class CheckersGameGUIBoard extends JPanel implements PropertyChangeListen
         this.selectedPieceGUI = null;
 
         this.checkersGameControler.addPropertyChangeListener(this);
-        this.setCheckerboard();
+        this.setCheckerboard(controler.getModelInfo());
     }
 
 
     /**
      * Crée la board (damier + pions) sur ce JPanel
      */
-    private void setCheckerboard() {
+    private void setCheckerboard(List<PieceInfo> pieceInfoList) {
         GridLayout layout = new GridLayout(this.size, this.size);
         this.setLayout(layout);
 
         this.createDamier();
-        this.placePions();
+        this.placePions(pieceInfoList);
     }
 
     /**
@@ -60,10 +65,8 @@ public class CheckersGameGUIBoard extends JPanel implements PropertyChangeListen
     private void createDamier() {
         CaseClickable case_listener = new CaseClickable(this.checkersGameControler);
 
-        IntStream xStream = IntStream.range(0, this.size);
-        xStream.forEach(x -> {
-            IntStream yStream = IntStream.range(0, this.size);
-            yStream.forEach(y -> {
+        IntStream.range(0, this.size).forEach(x -> {
+            IntStream.range(0, this.size).forEach(y -> {
                 JPanel case_to_add = new SquareGUI((x + y) % 2 == 1 ? this.checkersGameControler.getColorBlackSquare() : this.checkersGameControler.getColorWhiteSquare());
                 case_to_add.addMouseListener(case_listener);
                 this.add(case_to_add);
@@ -77,31 +80,19 @@ public class CheckersGameGUIBoard extends JPanel implements PropertyChangeListen
     /**
      * Place les pions sur le plateau
      */
-    private void placePions() {
+    private void placePions(List<PieceInfo> pieceInfoList) {
         PieceClickable piece_listener = new PieceClickable(this.checkersGameControler);
 
-        for (int joueur = 0; joueur < 2; joueur++) {
-            for (int x = 0; x < this.size; x++) {
-                for (int y = 0; y < 3; y++) {
-                    int index_case = (y + (this.size - 3) * joueur) * this.size + x;
-                    if ((x + y) % 2 != joueur) {
+        pieceInfoList
+                .stream()
+                .forEach(info -> {
+                    JPanel panel_pion = new PieceGUI(this.checkersGameControler, info.getColor());
+                    panel_pion.addMouseListener(piece_listener);
 
-                        JPanel panel_case = (JPanel) this.getComponent(index_case);
-
-                        JPanel panel_pion;
-                        if (joueur == 0) {
-                            panel_pion = new PieceGUI(this.checkersGameControler, PieceGUI.PieceColor.NOIR);
-                        } else {
-                            panel_pion = new PieceGUI(this.checkersGameControler, PieceGUI.PieceColor.BLANC);
-                        }
-
-                        panel_pion.addMouseListener(piece_listener);
-                        panel_case.add(panel_pion);
-
-                    }
-                }
-            }
-        }
+                    int index_case = info.getCoords().getY() * this.size + info.getCoords().getX();
+                    JPanel panel_case = (JPanel) this.getComponent(index_case);
+                    panel_case.add(panel_pion);
+                });
     }
 
     /**
@@ -139,9 +130,30 @@ public class CheckersGameGUIBoard extends JPanel implements PropertyChangeListen
 
     }
 
+    /**
+     * Prend (visuellement) la pièce présente dans la case aux coordonnées données
+     *
+     * @param coords Les coordonnées de la pièce à prendre
+     */
+    private void takePieceAtCoords(Coord coords) {
+
+        // Récupère la case aux coordonnées données
+        int index = coords.getY() * this.size + coords.getX();
+        JPanel panel_case = (JPanel) this.getComponent(index);
+
+        // Vide la case
+        panel_case.removeAll();
+
+        // Ré-affiche la case
+        panel_case.repaint();
+    }
+
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if (evt.getPropertyName().equals("selectedPieceGUI")) this.selectedPieceGUI = (JPanel) evt.getNewValue();
         if (evt.getPropertyName().equals("movePiece")) this.movePiece((JPanel) evt.getNewValue());
+        if (evt.getPropertyName().equals("takePiece"))
+            this.takePieceAtCoords(((PieceModel) evt.getNewValue()).getCoord());
     }
 }

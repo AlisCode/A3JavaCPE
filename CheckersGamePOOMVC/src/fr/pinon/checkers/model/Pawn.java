@@ -7,21 +7,25 @@ public class Pawn extends AbstractPiece {
 
     @Override
     public boolean isMoveOk(Coord targetCoord) {
-        boolean toReturn = false;
         switch (this.getPieceColor()) {
             case BLANC:
-                toReturn = this.getY() - 1 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 1;
-                break;
+                return this.getY() - 1 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 1;
             case NOIR:
-                toReturn = this.getY() + 1 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 1;
-                break;
+                return this.getY() + 1 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 1;
         }
 
-        return toReturn;
+        return false;
     }
 
     @Override
-    public boolean isMoveOkWithCatch(Coord targetCoord, int deltaX, int deltaY, boolean isPieceToCatch) {
+    public boolean isMoveOkWithCatch(Coord targetCoord) {
+        switch (this.getPieceColor()) {
+            case BLANC:
+                return this.getY() - 2 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 2;
+            case NOIR:
+                return this.getY() + 2 == targetCoord.getY() && Math.abs(this.getX() - targetCoord.getX()) == 2;
+        }
+
         return false;
     }
 }

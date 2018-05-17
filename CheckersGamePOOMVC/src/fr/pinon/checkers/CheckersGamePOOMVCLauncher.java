@@ -49,7 +49,7 @@ public class CheckersGamePOOMVCLauncher {
                 new Coord(3, 2),
                 new Coord(5, 2),
                 new Coord(7, 2),
-                new Coord(9, 2),
+                new Coord(1, 6),
         };
     }
 
@@ -70,7 +70,6 @@ public class CheckersGamePOOMVCLauncher {
                 new Coord(4, 9),
                 new Coord(6, 9),
                 new Coord(8, 9),
-
         };
     }
 }

@@ -10,14 +10,11 @@ public interface PieceModel {
     boolean isMoveOk(Coord targetCoord);
 
     /**
-     * @param targetCoord    Les coordonnées de la case qu'on vise
-     * @param deltaX         Le nombre de case dont on se déplace en X
-     * @param deltaY         Le nombre de case dont on se déplace en Y
-     * @param isPieceToCatch Doit-on prendre une pièce ou non ?
-     * @return True si le déplacement en diagonale de deux cases est possible uniquement en caas de prise d'une pièce
+     * @param targetCoord Les coordonnées de la case qu'on vise
+     * @return True si le déplacement en diagonale de deux cases est possible uniquement en cas de prise d'une pièce
      * adverse
      */
-    boolean isMoveOkWithCatch(Coord targetCoord, int deltaX, int deltaY, boolean isPieceToCatch);
+    boolean isMoveOkWithCatch(Coord targetCoord);
 
     /**
      * Récupère les coordonnées de la pièce

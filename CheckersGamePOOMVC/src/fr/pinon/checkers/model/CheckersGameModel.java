@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class CheckersGameModel {
     private int size;
 
     public CheckersGameModel(Coord[] newBlackCoords, Coord[] newWhiteCoords, int size, PieceGUI.PieceColor color) {
-        this.pieceList = new LinkedList<PieceModel>();
+        this.pieceList = new LinkedList<>();
 
         this.pieceList.addAll(Arrays.stream(newWhiteCoords).map(coord -> new Pawn(coord, PieceGUI.PieceColor.BLANC)).collect(Collectors.toList()));
         this.pieceList.addAll(Arrays.stream(newBlackCoords).map(coord -> new Pawn(coord, PieceGUI.PieceColor.NOIR)).collect(Collectors.toList()));
@@ -146,8 +147,19 @@ public class CheckersGameModel {
                 // Affiche le modèle pour vérifier qu'on a bien bougé les pièces correspondantes
                 System.out.println(this.getListAsString());
                 return ActionType.SIMPLEMOVE;
-            } else if (this.pieceToMove.isMoveOkWithCatch(dest_coord, 0, 0, true)) {
-                // TODO: Gérer le cas où on bouge et prends un pion ici
+            } else if (this.pieceToMove.isMoveOkWithCatch(dest_coord)) {
+                // Calcule les coordonnées de la pièce qu'on essaye de prendre
+                Coord old_coord = this.pieceToMove.getCoord();
+                Coord target_piece_coord = new Coord((dest_coord.getX() + old_coord.getX()) / 2, (dest_coord.getY() + old_coord.getY()) / 2);
+
+                // Essaye de retirer la pièce attaquée
+                if (this.tryRemoveAttackedPiece(target_piece_coord)) {
+                    // Bouge la pièce si on a pu prendre une pièce
+                    this.pieceToMove.setCoord(dest_coord);
+                    // Affiche le modèle pour vérifier qu'on a bien bougé les pièces correspondantes
+                    System.out.println(this.getListAsString());
+                    return ActionType.MOVECATCH;
+                }
             }
         }
 
@@ -155,8 +167,44 @@ public class CheckersGameModel {
         return ActionType.NOMOVE;
     }
 
+    /**
+     * Essaye de retirer un pièce attaquée par un déplacement qui aurait pour but de prendre la pièce aux coordonnées
+     * données en entrée.
+     *
+     * @param targetCoord
+     * @return vrai s'il existe une pièce de la couleur adverse aux coordonnées données, faux sinon
+     */
+    private boolean tryRemoveAttackedPiece(Coord targetCoord) {
+
+        // Récupère la pièce concernée
+        PieceModel pieceModel = findPiece(targetCoord);
+        if (pieceModel != null && pieceModel.getPieceColor() != this.currentColor) {
+
+            // Retire la pièce du model
+            this.pieceList.remove(pieceModel);
+
+            // Met à jour la "pièce to take" dont le controler se servira pour mettre à jour la vue
+            this.pieceToTake = pieceModel;
+
+            return true;
+        }
+
+        return false;
+    }
+
     private PieceModel findPiece(Coord coord) {
         Optional<PieceModel> opt = this.pieceList.stream().filter(p -> p.getCoord().equals(coord)).findFirst();
         return opt.orElse(null);
+    }
+
+    public List<PieceInfo> getModelInfo() {
+        return this.pieceList
+                .stream()
+                .map(PieceInfo::fromModel)
+                .collect(Collectors.toList());
+    }
+
+    public PieceModel getPieceToTake() {
+        return this.pieceToTake;
     }
 }
